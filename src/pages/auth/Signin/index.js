@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 // import './signin.css'
 // css module/scop
 import style from './signin.module.css'
+import Button from '../../../components/Button'
 
 class Signin extends Component {
   constructor(){
@@ -30,6 +31,7 @@ class Signin extends Component {
     }
   }
   render() {
+
     return (
       <div className="container">
         <h1>sign in</h1>
@@ -37,19 +39,24 @@ class Signin extends Component {
           <h4>silahkan login disini</h4>
           <form>
             <div className="form-group">
-              <label for="exampleInputEmail1">Email address</label>
+              <label htmlFor="exampleInputEmail1">Email address</label>
               <input type="email" name="email" value={this.state.email} className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" onChange={this.handleChange} />
               <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
             </div>
             <div className="form-group">
-              <label for="exampleInputPassword1">Password</label>
+              <label htmlFor="exampleInputPassword1">Password</label>
               <input type="password" name="password" value={this.state.password} className="form-control" id="exampleInputPassword1" onChange={this.handleChange} />
             </div>
             <div className="form-group form-check">
               <input type="checkbox" className="form-check-input" id="exampleCheck1" />
-              <label className="form-check-label" for="exampleCheck1">Check me out</label>
+              <label className="form-check-label" htmlFor="exampleCheck1">Check me out</label>
             </div>
-            <button type="submit" className="btn btn-primary" onClick={this.handleLogin}>Submit</button>
+            {/* <button type="submit" className="btn btn-primary" onClick={this.handleLogin}>Submit</button> */}
+          <Button
+          title="Register"
+          color="dark"
+          onClick={this.handleLogin}
+          />
           </form>
         </div>
       </div>

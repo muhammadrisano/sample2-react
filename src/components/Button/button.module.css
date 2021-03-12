@@ -1,0 +1,13 @@
+.btn{
+  background-color: salmon;
+  padding: 5px 10px;
+  border-radius: 8px;
+  border-width: 0px;
+  color: #fff;
+}
+.primary{
+  background-color: green;
+}
+.dark{
+  background-color: grey;
+}
