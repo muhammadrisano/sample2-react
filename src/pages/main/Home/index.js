@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import {Navbar, Header, Card} from '../../../components'
+import qs from 'query-string'
 
 
 class Home extends Component {
@@ -24,6 +25,7 @@ class Home extends Component {
         films: res.data,
         isLoading: false
       })
+      console.log(this.state.films);
     })
     .catch(()=>{
       alert('server bermasalah')
@@ -32,17 +34,30 @@ class Home extends Component {
       })
     })
   }
+  handelDetail = (id)=>{
+    this.props.history.push(`/detail/${id}`)
+  }
   render() {
+    console.log('isi props', this.props);
+    const dataquery = qs.parse(this.props.location.search)
+    console.log(dataquery);
     return (
       <>
       <Navbar/>
         <Header/>
       <div className="container">
         <div className="row">
+            <h2>id user = {dataquery.idUser}</h2>
           {this.state.isLoading ? <h1>loadingg.........</h1> : 
         this.state.films.map((item)=>
-        <div className="col-md-3 mt-4">
-          <Card title={item.title} description={item.body}/>
+          <div className="col-md-3 mt-4" key={item.id}>
+          
+          {/* <Card
+          title={item.title}
+          description={item.body}
+          fireEvent={() => this.handelDetail(item.id)}
+          
+          /> */}
         </div>
         )}
           </div>
