@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 function Contoh({sendValue}) {
   console.log(sendValue);
-  const [value, setValue] = useState('risano akbar')
+  // const [value, setValue] = useState('risano akbar')
   const handleSend=()=>{
     sendValue('bla bla')
   }

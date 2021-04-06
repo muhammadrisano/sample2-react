@@ -1,5 +1,5 @@
 import React from 'react'
-import { useHistory } from 'react-router'
+// import { useHistory } from 'react-router'
 import style from './input.module.css'
 
 function Input({ type, placeholder, name, label, value, inputChange}) {
