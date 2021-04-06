@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import Button from '../../../components/Button'
 import Input from '../../../components/Input'
 import style from './style.module.css'
@@ -14,13 +14,8 @@ const Signup = (props) => {
     password: '',
     fullName: ''
   })
-  useEffect(()=>{
-    console.log(form);
-  }, [])
-  
-  useEffect(() => {
-    return () => console.log('ini pengganti componentWillUnmon');
-  },[])
+ 
+
 
   const handleChange = (e)=>{
     setForm({
